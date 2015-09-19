@@ -8,15 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		CD43262B1BAD3C350010DD34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD43262A1BAD3C350010DD34 /* AppDelegate.swift */; };
-		CD43262D1BAD3C350010DD34 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD43262C1BAD3C350010DD34 /* ViewController.swift */; };
+		CD43262D1BAD3C350010DD34 /* PopularTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD43262C1BAD3C350010DD34 /* PopularTVC.swift */; };
 		CD4326301BAD3C350010DD34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD43262E1BAD3C350010DD34 /* Main.storyboard */; };
 		CD4326321BAD3C350010DD34 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD4326311BAD3C350010DD34 /* Images.xcassets */; };
 		CD4326351BAD3C350010DD34 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD4326331BAD3C350010DD34 /* LaunchScreen.xib */; };
 		CD4326411BAD3C350010DD34 /* instagram_popularTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4326401BAD3C350010DD34 /* instagram_popularTests.swift */; };
 		CD43264B1BAD40570010DD34 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = CD43264A1BAD40570010DD34 /* .gitignore */; };
 		CD4326501BAD43C80010DD34 /* InstagramAuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD43264F1BAD43C80010DD34 /* InstagramAuthVC.swift */; };
-		CD4326521BAD45130010DD34 /* AuthDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4326511BAD45130010DD34 /* AuthDataManager.swift */; };
+		CD4326521BAD45130010DD34 /* AuthDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4326511BAD45130010DD34 /* AuthDataStorage.swift */; };
 		CD4326541BAD50880010DD34 /* InstagramAuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4326531BAD50880010DD34 /* InstagramAuthRouter.swift */; };
+		CD4326561BAD9B3D0010DD34 /* PopularDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4326551BAD9B3D0010DD34 /* PopularDataManager.swift */; };
+		CD4326581BADA21F0010DD34 /* PopularInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4326571BADA21F0010DD34 /* PopularInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,7 +35,7 @@
 		CD4326251BAD3C350010DD34 /* instagram-popular.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "instagram-popular.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD4326291BAD3C350010DD34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD43262A1BAD3C350010DD34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CD43262C1BAD3C350010DD34 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CD43262C1BAD3C350010DD34 /* PopularTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularTVC.swift; sourceTree = "<group>"; };
 		CD43262F1BAD3C350010DD34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CD4326311BAD3C350010DD34 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CD4326341BAD3C350010DD34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -42,8 +44,10 @@
 		CD4326401BAD3C350010DD34 /* instagram_popularTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = instagram_popularTests.swift; sourceTree = "<group>"; };
 		CD43264A1BAD40570010DD34 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		CD43264F1BAD43C80010DD34 /* InstagramAuthVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstagramAuthVC.swift; sourceTree = "<group>"; };
-		CD4326511BAD45130010DD34 /* AuthDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthDataManager.swift; sourceTree = "<group>"; };
+		CD4326511BAD45130010DD34 /* AuthDataStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthDataStorage.swift; sourceTree = "<group>"; };
 		CD4326531BAD50880010DD34 /* InstagramAuthRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstagramAuthRouter.swift; sourceTree = "<group>"; };
+		CD4326551BAD9B3D0010DD34 /* PopularDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopularDataManager.swift; sourceTree = "<group>"; };
+		CD4326571BADA21F0010DD34 /* PopularInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopularInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,9 +137,9 @@
 		CD43264D1BAD40770010DD34 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				CD43264F1BAD43C80010DD34 /* InstagramAuthVC.swift */,
 				CD4326531BAD50880010DD34 /* InstagramAuthRouter.swift */,
-				CD43262C1BAD3C350010DD34 /* ViewController.swift */,
+				CD43264F1BAD43C80010DD34 /* InstagramAuthVC.swift */,
+				CD43262C1BAD3C350010DD34 /* PopularTVC.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -143,7 +147,9 @@
 		CD43264E1BAD40840010DD34 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				CD4326511BAD45130010DD34 /* AuthDataManager.swift */,
+				CD4326511BAD45130010DD34 /* AuthDataStorage.swift */,
+				CD4326551BAD9B3D0010DD34 /* PopularDataManager.swift */,
+				CD4326571BADA21F0010DD34 /* PopularInfo.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -249,11 +255,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD43262D1BAD3C350010DD34 /* ViewController.swift in Sources */,
+				CD4326581BADA21F0010DD34 /* PopularInfo.swift in Sources */,
+				CD43262D1BAD3C350010DD34 /* PopularTVC.swift in Sources */,
 				CD43262B1BAD3C350010DD34 /* AppDelegate.swift in Sources */,
 				CD4326501BAD43C80010DD34 /* InstagramAuthVC.swift in Sources */,
-				CD4326521BAD45130010DD34 /* AuthDataManager.swift in Sources */,
+				CD4326521BAD45130010DD34 /* AuthDataStorage.swift in Sources */,
 				CD4326541BAD50880010DD34 /* InstagramAuthRouter.swift in Sources */,
+				CD4326561BAD9B3D0010DD34 /* PopularDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

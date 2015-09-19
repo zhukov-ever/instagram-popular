@@ -11,9 +11,9 @@ import Foundation
 let kAuthTokenKey = "kAuthTokenKey"
 let kClientId = "684d63b043754662ac5787b3bff22838"
 let kRedirectUri = "https://github.com/zhukov-ever/instagram-popular"
-let kInstagramAuthTokenKey = "code"
+let kInstagramAuthTokenKey = "access_token"
 
-class AuthDataManager: NSObject {
+class AuthDataStorage {
     
     static var authToken:String?{
         get {
@@ -27,11 +27,22 @@ class AuthDataManager: NSObject {
         set {
             let _ud = NSUserDefaults.standardUserDefaults()
             _ud.setValue(newValue, forKey: kAuthTokenKey)
+            
+            if (newValue == nil) {
+                let _arrayCookies = NSArray(array: NSHTTPCookieStorage.sharedHTTPCookieStorage().cookies!)
+                for i:Int in 0..<_arrayCookies.count {
+                    let _cookie:NSHTTPCookie? = _arrayCookies[i] as? NSHTTPCookie
+                    if (_cookie != nil &&
+                        _cookie?.domain.rangeOfString("instagram.com") != nil) {
+                            NSHTTPCookieStorage.sharedHTTPCookieStorage().deleteCookie(_cookie!)
+                    }
+                }
+            }
         }
     }
     
     class func isAutenticated() -> Bool {
-        return AuthDataManager.authToken != nil
+        return AuthDataStorage.authToken != nil
     }
 
     

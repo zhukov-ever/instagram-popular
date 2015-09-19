@@ -8,6 +8,8 @@
 
 import UIKit
 
+let kServerUrl = NSURL(string: "https://api.instagram.com/")
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -17,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window?.makeKeyAndVisible()
         
-        if (!AuthDataManager.isAutenticated()) {
+        if (!AuthDataStorage.isAutenticated()) {
             InstagramAuthRouter.show(self.window?.rootViewController, animated: false)
         }
         

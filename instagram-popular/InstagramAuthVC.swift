@@ -24,31 +24,6 @@ class InstagramAuthVC: UIViewController {
         
     }
     
-}
-
-
-extension InstagramAuthVC: UIWebViewDelegate {
-    
-    func stringForAuth() -> String {
-        return "https://api.instagram.com/oauth/authorize/?client_id=\(kClientId)&redirect_uri=\(kRedirectUri)&response_type=code"
-    }
-    
-    func loadUrl() {
-        let _arrayCookies = NSArray(array: NSHTTPCookieStorage.sharedHTTPCookieStorage().cookies!)
-        for i:Int in 0..<_arrayCookies.count {
-            let _cookie:NSHTTPCookie? = _arrayCookies[i] as? NSHTTPCookie
-            if (_cookie != nil &&
-                _cookie?.domain.rangeOfString("instagram.com") != nil) {
-                NSHTTPCookieStorage.sharedHTTPCookieStorage().deleteCookie(_cookie!)
-            }
-        }
-        
-        let _request:NSURLRequest = NSURLRequest(URL: NSURL(string: self.stringForAuth())!,
-            cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringLocalAndRemoteCacheData,
-            timeoutInterval: 30.0)
-        self.webView.loadRequest(_request)
-    }
-    
     func showAlertReloadPage() {
         if self.presentedViewController != nil {
             return
@@ -65,18 +40,37 @@ extension InstagramAuthVC: UIWebViewDelegate {
         self.presentViewController(_alert, animated: true, completion: nil)
     }
     
+}
+
+
+extension InstagramAuthVC: UIWebViewDelegate {
+    
+    func stringForAuth() -> String {
+        return "https://api.instagram.com/oauth/authorize/?client_id=\(kClientId)&redirect_uri=\(kRedirectUri)&response_type=token"
+    }
+    
+    func loadUrl() {
+        let _request:NSURLRequest = NSURLRequest(URL: NSURL(string: self.stringForAuth())!,
+            cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringLocalAndRemoteCacheData,
+            timeoutInterval: 30.0)
+        self.webView.loadRequest(_request)
+    }
+    
     func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         
         if (request.URL != nil) {
             let _redirectUrl = NSURL(string: kRedirectUri)
             let _compTarget = NSURLComponents(URL: request.URL!, resolvingAgainstBaseURL: false)
             let _compRedirect = NSURLComponents(URL: _redirectUrl!, resolvingAgainstBaseURL: false)
-            if (_compTarget != nil && _compRedirect != nil && _compTarget!.queryItems != nil && _compTarget!.host == _compRedirect?.host) {
-                let _arr = NSArray(array:_compTarget!.queryItems!)
-                for i:Int in 0..<_arr.count {
-                    let item:NSURLQueryItem? = _arr[i] as? NSURLQueryItem
-                    if (item != nil && item!.name == kInstagramAuthTokenKey) {
-                        AuthDataManager.authToken = item!.value
+
+            if (_compTarget != nil && _compRedirect != nil && _compTarget!.fragment != nil && _compTarget!.host == _compRedirect?.host) {
+                let _arr = NSArray(array:_compTarget!.fragment!.componentsSeparatedByString("="))
+                if (_arr.count == 2) {
+                    let _key = _arr[0] as? String
+                    let _value = _arr[1] as? String
+                    
+                    if _key != nil && _key == kInstagramAuthTokenKey && _value != nil {
+                        AuthDataStorage.authToken = _value
                         self.dismissViewControllerAnimated(true, completion: nil)
                         return false
                     }
