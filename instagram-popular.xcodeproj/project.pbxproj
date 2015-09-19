@@ -14,6 +14,9 @@
 		CD4326351BAD3C350010DD34 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD4326331BAD3C350010DD34 /* LaunchScreen.xib */; };
 		CD4326411BAD3C350010DD34 /* instagram_popularTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4326401BAD3C350010DD34 /* instagram_popularTests.swift */; };
 		CD43264B1BAD40570010DD34 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = CD43264A1BAD40570010DD34 /* .gitignore */; };
+		CD4326501BAD43C80010DD34 /* InstagramAuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD43264F1BAD43C80010DD34 /* InstagramAuthVC.swift */; };
+		CD4326521BAD45130010DD34 /* AuthDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4326511BAD45130010DD34 /* AuthDataManager.swift */; };
+		CD4326541BAD50880010DD34 /* InstagramAuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4326531BAD50880010DD34 /* InstagramAuthRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +41,9 @@
 		CD43263F1BAD3C350010DD34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD4326401BAD3C350010DD34 /* instagram_popularTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = instagram_popularTests.swift; sourceTree = "<group>"; };
 		CD43264A1BAD40570010DD34 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
+		CD43264F1BAD43C80010DD34 /* InstagramAuthVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstagramAuthVC.swift; sourceTree = "<group>"; };
+		CD4326511BAD45130010DD34 /* AuthDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthDataManager.swift; sourceTree = "<group>"; };
+		CD4326531BAD50880010DD34 /* InstagramAuthRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstagramAuthRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +133,8 @@
 		CD43264D1BAD40770010DD34 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CD43264F1BAD43C80010DD34 /* InstagramAuthVC.swift */,
+				CD4326531BAD50880010DD34 /* InstagramAuthRouter.swift */,
 				CD43262C1BAD3C350010DD34 /* ViewController.swift */,
 			);
 			name = Views;
@@ -135,6 +143,7 @@
 		CD43264E1BAD40840010DD34 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				CD4326511BAD45130010DD34 /* AuthDataManager.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -242,6 +251,9 @@
 			files = (
 				CD43262D1BAD3C350010DD34 /* ViewController.swift in Sources */,
 				CD43262B1BAD3C350010DD34 /* AppDelegate.swift in Sources */,
+				CD4326501BAD43C80010DD34 /* InstagramAuthVC.swift in Sources */,
+				CD4326521BAD45130010DD34 /* AuthDataManager.swift in Sources */,
+				CD4326541BAD50880010DD34 /* InstagramAuthRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,7 +331,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -357,7 +369,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
