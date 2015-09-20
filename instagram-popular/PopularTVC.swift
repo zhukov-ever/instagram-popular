@@ -13,6 +13,21 @@ class PopularCell: UITableViewCell {
     @IBOutlet weak var imageViewPopular: UIImageView!
     @IBOutlet weak var labelCaption: UILabel!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "imageDidLoadHandler:", name: kImageDidLoadNotification, object: nil)
+    }
+    
+    func imageDidLoadHandler(sender:NSNotification) {
+        let _dict:Dictionary = sender.userInfo as Dictionary!
+        let _stringUrl = _dict[kImageDidLoadUrlKey] as! String
+        
+        if (_stringUrl == self.info?.imageUrl) {
+            self.imageViewPopular.image = info?.image
+        }
+    }
+    
     var info:PopularInfo? {
         didSet {
             if info == nil || info?.caption == nil {
@@ -21,8 +36,7 @@ class PopularCell: UITableViewCell {
                 self.labelCaption.hidden = false
                 self.labelCaption.text = info?.caption;
             }
-            
-            self.imageViewPopular.sd_setImageWithURL(NSURL(string: info!.imageUrl!))
+            self.imageViewPopular.image = info?.image
         }
     }
     
@@ -40,6 +54,13 @@ class PopularTVC: UITableViewController {
         
         self.refreshControl = UIRefreshControl()
         self.refreshControl?.addTarget(self, action: "refreshHandler", forControlEvents: UIControlEvents.ValueChanged)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "refreshHandler", name: UIApplicationDidBecomeActiveNotification, object: nil)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.dataManager.apiReload()
     }
 
     override func didReceiveMemoryWarning() {

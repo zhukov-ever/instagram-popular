@@ -46,7 +46,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		836D6B037DD8DB6DAAA182AF5F0E94D2 /* PBXContainerItemProxy */ = {
+		3ED0F7E04E10B28CC1AD9FC17330D6A4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
@@ -309,7 +309,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				67E42C3EA1C3E27FD8662584609638CE /* PBXTargetDependency */,
+				EF29EAFDF04C79A223BEBCA4FD9AFC2C /* PBXTargetDependency */,
 			);
 			name = Pods;
 			productName = Pods;
@@ -394,11 +394,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		67E42C3EA1C3E27FD8662584609638CE /* PBXTargetDependency */ = {
+		EF29EAFDF04C79A223BEBCA4FD9AFC2C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SDWebImage;
 			target = 9666688CB41B38A9914616144C9C7A3E /* SDWebImage */;
-			targetProxy = 836D6B037DD8DB6DAAA182AF5F0E94D2 /* PBXContainerItemProxy */;
+			targetProxy = 3ED0F7E04E10B28CC1AD9FC17330D6A4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

@@ -10,5 +10,6 @@
 #define instagram_popular_Header_h
 
 #import <SDWebImage/SDImageCache.h>
+#import <CommonCrypto/CommonCrypto.h>
 
 #endif
