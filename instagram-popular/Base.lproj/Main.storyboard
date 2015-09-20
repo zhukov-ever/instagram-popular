@@ -51,11 +51,16 @@
         <!--Navigation Controller-->
         <scene sceneID="f6B-G6-7Qg">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="K5J-2t-Pxd" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBarsOnSwipe="YES" id="K5J-2t-Pxd" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="176-m5-ETV">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.2849167956656346" green="0.46268916489293083" blue="0.68101205737229098" alpha="0.5" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -66,28 +71,49 @@
             </objects>
             <point key="canvasLocation" x="283" y="424"/>
         </scene>
-        <!--PopularTVC-->
+        <!--Popular-->
         <scene sceneID="fOt-w4-OjY">
             <objects>
                 <tableViewController id="aYl-yC-cVi" customClass="PopularTVC" customModule="instagram_popular" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="dSz-bC-PJy">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="320" sectionHeaderHeight="22" sectionFooterHeight="22" id="dSz-bC-PJy">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="rzw-eN-5rh" style="IBUITableViewCellStyleDefault" id="L1z-tX-Dne">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="320" id="L1z-tX-Dne" customClass="PopularCell" customModule="instagram_popular" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="L1z-tX-Dne" id="3dy-Kl-0zT">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rzw-eN-5rh">
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="t0N-yR-oDs">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="319"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I2v-OK-g3d">
+                                            <rect key="frame" x="0.0" y="260" width="320" height="60"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="60" id="WwJ-rt-e0w"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="I2v-OK-g3d" secondAttribute="bottom" id="6d6-uY-mxi"/>
+                                        <constraint firstAttribute="bottom" secondItem="t0N-yR-oDs" secondAttribute="bottom" constant="1" id="Bmx-gZ-Lhd"/>
+                                        <constraint firstItem="t0N-yR-oDs" firstAttribute="leading" secondItem="3dy-Kl-0zT" secondAttribute="leading" id="D0U-jk-ycs"/>
+                                        <constraint firstItem="I2v-OK-g3d" firstAttribute="leading" secondItem="3dy-Kl-0zT" secondAttribute="leading" id="RlC-kX-ebw"/>
+                                        <constraint firstAttribute="trailing" secondItem="I2v-OK-g3d" secondAttribute="trailing" id="alz-L5-aYm"/>
+                                        <constraint firstItem="t0N-yR-oDs" firstAttribute="top" secondItem="3dy-Kl-0zT" secondAttribute="top" id="c5X-im-r8Y"/>
+                                        <constraint firstAttribute="trailing" secondItem="t0N-yR-oDs" secondAttribute="trailing" id="jEz-Th-W9i"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="imageViewPopular" destination="t0N-yR-oDs" id="scx-lV-0Kv"/>
+                                    <outlet property="labelCaption" destination="I2v-OK-g3d" id="1gU-7o-SaE"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -95,8 +121,9 @@
                             <outlet property="delegate" destination="aYl-yC-cVi" id="BIV-8W-up9"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="WSG-QD-Jpb">
+                    <navigationItem key="navigationItem" title="Popular" id="WSG-QD-Jpb">
                         <barButtonItem key="rightBarButtonItem" title="Logout" id="Yel-UM-P7v">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="logoutHandler:" destination="aYl-yC-cVi" id="bY4-ZJ-CSE"/>
                             </connections>

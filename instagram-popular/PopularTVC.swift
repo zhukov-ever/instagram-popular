@@ -8,6 +8,26 @@
 
 import UIKit
 
+class PopularCell: UITableViewCell {
+    
+    @IBOutlet weak var imageViewPopular: UIImageView!
+    @IBOutlet weak var labelCaption: UILabel!
+    
+    var info:PopularInfo? {
+        didSet {
+            if info == nil || info?.caption == nil {
+                self.labelCaption.hidden = true
+            } else {
+                self.labelCaption.hidden = false
+                self.labelCaption.text = info?.caption;
+            }
+            
+            self.imageViewPopular.sd_setImageWithURL(NSURL(string: info!.imageUrl!))
+        }
+    }
+    
+}
+
 class PopularTVC: UITableViewController {
 
     let dataManager = PopularDataManager()
@@ -74,6 +94,10 @@ extension PopularTVC: PopularDataManagerDelegate {
 
 extension PopularTVC: UITableViewDelegate, UITableViewDataSource {
     
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return CGRectGetWidth(UIScreen.mainScreen().bounds)
+    }
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if self.dataManager.data != nil {
             return self.dataManager.data!.count
@@ -82,12 +106,11 @@ extension PopularTVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let _cell = tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
+        let _cell = tableView.dequeueReusableCellWithIdentifier("cell") as! PopularCell
         
         let _info = self.dataManager.data![indexPath.row] as! PopularInfo
-        if (_info.caption != nil) {
-            _cell.textLabel?.text = _info.caption
-        }
+        
+        _cell.info = _info
         
         return _cell;
     }
